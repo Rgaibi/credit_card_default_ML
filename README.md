@@ -14,9 +14,9 @@ credit_card_default_ML/
 
 ├── README.md
 
-├── credit_card_default_analysis.ipynb
+├── credit_card_data.csv
 
-└── credit_card_data.csv
+└── credit_card_default_analysis.ipynb
 
 
 ## 🎯 Objectif
