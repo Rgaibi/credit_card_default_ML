@@ -5,14 +5,11 @@ Ce projet utilise des techniques de machine learning pour prédire si un client 
 ## 📁 Structure du projet
 
 credit_card_default_ML/
+
 │
-
 ├── credit_card_data.csv # Données brutes
-
 ├── credit_card_default_analysis.ipynb # Notebook principal d'analyse et de modélisation
-
 ├── README.md # Description du projet
-
 └── .gitignore # Fichiers à exclure du suivi Git
 
 
