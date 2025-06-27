@@ -16,8 +16,7 @@ credit_card_default_ML/
 
 ├── credit_card_default_analysis.ipynb
 
-├── data/
-│   └── credit_card_data.csv
+└── credit_card_data.csv
 
 
 ## 🎯 Objectif
