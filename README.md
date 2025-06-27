@@ -19,29 +19,57 @@ credit_card_default_ML/
 
 ## 🎯 Objectif
 
-Améliorer la détection des clients à risque de défaut de paiement pour une éventuelle utilisation dans un modèle de scoring bancaire.
+Prédire la variable cible `default_payment_next_month`, qui indique si un client a fait défaut de paiement le mois suivant, à partir de ses données financières et démographiques.
 
-## 📊 Données
 
-Le dataset contient des informations sur plus de 30 000 clients, avec des variables comme :
-- Âge, genre, statut marital, niveau d’éducation
-- Historique de remboursement sur 6 mois
-- Montants des paiements, crédits et limites
-- Variable cible : `default.payment.next.month`
+## 🔍 Étapes du projet
 
-## 🛠️ Techniques utilisées
+1. **Chargement et exploration des données**
+   - Analyse de la distribution des variables.
+   - Visualisations selon la variable cible.
+   - Tests statistiques (t-test, chi2) pour détecter les variables significatives.
 
-- Nettoyage et préparation des données (pandas)
-- Visualisation (matplotlib, seaborn)
-- Modélisation avec XGBoost
-- Équilibrage de classes (scale_pos_weight)
-- Évaluation : confusion matrix, F1-score, recall, precision
+2. **Prétraitement**
+   - Encodage des variables catégorielles (`LabelEncoder`)
+   - Séparation en ensembles d'entraînement/test
+   - Feature selection avec `SelectKBest`
 
-## 🔍 Résultats
+3. **Modélisation**
+   - Trois modèles comparés :
+     - `XGBoost`
+     - `Random Forest`
+     - `Régression logistique`
+   - Évaluation avec `classification_report`, `confusion_matrix`, `learning_curve`.
 
-- Modèle final : `XGBClassifier`
-- Score F1, recall et précision optimisés à l’aide de GridSearchCV
-- Sauvegarde du modèle avec `joblib` pour une future réutilisation
+4. **Optimisation de XGBoost**
+   - Recherche des hyperparamètres via `RandomizedSearchCV`
+   - Utilisation du `scale_pos_weight` pour gérer les classes déséquilibrées
+   - Seuil personnalisé de prédiction pour maximiser le recall
+
+5. **Évaluation finale**
+   - Rapport de précision, rappel, F1-score
+   - Analyse de la courbe précision/rappel
+   - Meilleur compromis trouvé à `threshold = 0.4`
+
+
+## ✅ Résultats
+
+- **XGBoost** optimisé avec seuil personnalisé :
+  - Accuracy : **68%**
+  - Recall : **75%** (classe positive)
+  - F1-Score : **50%**
+  - Precision : **37%**
+
+👉 Le modèle permet de détecter une majorité des défauts (rappel élevé), ce qui est crucial dans un contexte de crédit.
+
+
+## 🛠️ Librairies utilisées
+
+- `pandas`, `numpy`, `matplotlib`, `seaborn`
+- `scikit-learn`
+- `xgboost`
+- `scipy`
+
 
 ## 👤 Auteur
 
