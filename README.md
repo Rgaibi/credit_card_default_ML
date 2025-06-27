@@ -5,6 +5,7 @@ Ce projet utilise des techniques de machine learning pour prédire si un client 
 ## 📁 Structure du projet
 
 credit_card_default_ML/
+
 │
 
 ├── .gitignore
